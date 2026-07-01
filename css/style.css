@@ -597,3 +597,121 @@ footer {
 .sub-hero-title {
     color: var(--bg-white);
 }
+
+/* ==========================================
+   RESPONSIVE DESIGN OVERRIDES
+   ========================================== */
+/* Tablet (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    .section {
+        padding: 80px 0;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .hero-title {
+        font-size: 3rem !important;
+    }
+    .hero-desc {
+        font-size: 1.15rem !important;
+    }
+    .stats-grid {
+        gap: 20px;
+        padding: 30px;
+    }
+    .stat-number {
+        font-size: 2.4rem !important;
+    }
+    .sub-hero {
+        padding: 120px 0 60px 0 !important;
+    }
+}
+
+/* Tablet Portrait & Large Smartphone (Max-width: 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    .section {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-header {
+        margin-bottom: 40px;
+    }
+    .hero {
+        padding-top: 100px !important;
+        text-align: center;
+    }
+    .hero-btns {
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 2.4rem !important;
+    }
+    .hero-desc {
+        font-size: 1rem !important;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+        padding: 24px;
+    }
+    .footer-bottom {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 12px;
+    }
+    .footer-bottom-links {
+        justify-content: center;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn {
+        padding: 12px 24px;
+    }
+    .sub-hero-title {
+        font-size: 2rem !important;
+    }
+}
+
+/* Smartphone (Max-width: 576px) */
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        padding: 0 16px;
+    }
+    .section {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+    .hero-btns .btn, .cta-btns .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .contact-info-card, .contact-form-card {
+        padding: 24px !important;
+    }
+    .service-content {
+        padding: 20px !important;
+    }
+    .feature-card {
+        padding: 24px !important;
+    }
+}
