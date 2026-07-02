@@ -10,6 +10,7 @@ import warehouse from '../assets/images/warehouse.png';
 function StatItem({ number, suffix, label }) {
   const ref = useRef(null);
   const animated = useRef(false);
+  const timerRef = useRef(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,20 +23,23 @@ function StatItem({ number, suffix, label }) {
         const end = parseInt(number);
         const duration = 2000;
         const step = Math.ceil(end / (duration / 16));
-        const timer = setInterval(() => {
+        timerRef.current = setInterval(() => {
           start += step;
           if (start >= end) {
-            el.textContent = end + (suffix || '');
-            clearInterval(timer);
+            if (ref.current) ref.current.textContent = end + (suffix || '');
+            clearInterval(timerRef.current);
           } else {
-            el.textContent = start + (suffix || '');
+            if (ref.current) ref.current.textContent = start + (suffix || '');
           }
         }, 16);
       }
     }, { threshold: 0.5 });
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, [number, suffix]);
 
   return (
